@@ -1,0 +1,7 @@
+@use '../../UI.scss' as *;
+
+.feedback {
+  @include block;
+  box-sizing: border-box;
+  background: radial-gradient(85.62% 123.5% at 16.99% 100%, rgba(0, 195, 255, 0.2) 0%, rgba(243, 249, 255, 0) 100%) , radial-gradient(90.83% 141.65% at 88.14% 9.17%, rgba(91, 194, 0, 0.16) 0%, rgba(243, 249, 255, 0) 100%);
+}
