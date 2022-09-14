@@ -2,6 +2,171 @@
 
 .feedback {
   @include block;
-  box-sizing: border-box;
-  background: radial-gradient(85.62% 123.5% at 16.99% 100%, rgba(0, 195, 255, 0.2) 0%, rgba(243, 249, 255, 0) 100%) , radial-gradient(90.83% 141.65% at 88.14% 9.17%, rgba(91, 194, 0, 0.16) 0%, rgba(243, 249, 255, 0) 100%);
+  margin-top: 78px;
+
+
+  &__image {
+    height: 100%;
+  }
+
+  &__background {
+    background: center/cover url(../../assets/images/feedback.png) no-repeat;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    padding-left: 104px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: $colorgrey500;
+    margin: 36px 0 0;
+  }
+
+  &__subtitle {
+    @extend %fonttextbig;
+    margin: 4px 0 0;
+  }
+
+  &__input-field {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $colorwhite;
+    border-radius: 8px;
+    max-width: 504px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__input-tel {
+    @extend %fonttextbig;
+    font-weight: 600;
+    background-color: $colorwhite;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    padding: 24px 25px 8px;
+  }
+
+  &__input-placeholder {
+    @extend %fonttextsmall;
+    position: absolute;
+    top: 4px;
+    left: 25px;
+    color: $colorgrey200;
+    margin: 0;
+  }
+
+  &__button {
+    @extend %button;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-shrink: 0;
+  }
+
+  &__checkbox-field {
+    display: flex;
+    margin: 16px 0 36px;
+  }
+
+  &__checkbox-real { display: none; }
+  &__checkbox-real:checked + &__checkbox {
+    @extend %checkboxchecked;
+  }
+  &__checkbox {
+    @include checkbox(24px);
+    margin-right: 11px;
+  }
+
+  &__checkbox-text {
+    @extend %fonttextsmall;
+    max-width: 340px;
+    margin: 0;
+
+    & a {
+      color: $colorblue800;
+    }
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .feedback {
+    &__background { 
+      padding-left: 32px; 
+      position: relative;
+    }
+    &__image {
+      position: absolute; 
+      right: 0;
+      top: 0;
+    }
+    &__title {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    &__subtitle {
+      max-width: 424px;
+    }
+  }
+}
+@media screen and (max-width: 795px) {
+  .feedback {
+    &__image {
+      object-fit: cover;
+      width: 43%;
+      height: auto;
+      bottom: 0;
+      top: auto;
+      min-width: 280px;
+    }
+  }
+}
+@media screen and (max-width: $breakpointmobile) {
+  .feedback {
+    &__background {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 12px 32px;
+    }
+    &__data {
+      order: 1;
+    }
+    &__image {
+      position: relative;
+      width: 183px;
+      min-width: auto;
+      margin-top: -15px;
+    }
+    &__title {
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      margin: 4px 0 0;
+    }
+    &__subtitle {
+      text-align: center;
+      max-width: none;
+      margin: 4px 0 0;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__input-field {
+      flex-direction: column;
+      background-color: transparent;
+    }
+    &__input-tel {
+      
+    }
+    &__button {
+      margin-top: 8px;
+    }
+    &__checkbox-field {
+      margin-bottom: 0;
+    }
+  }
 }
