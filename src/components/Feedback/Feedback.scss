@@ -62,10 +62,21 @@
   }
 
   &__button {
-    @extend %button;
-    padding-left: 20px;
-    padding-right: 20px;
     flex-shrink: 0;
+    min-width: 183px;
+  }
+
+  &__agreement {
+    margin-top: 16px;
+
+    .agreement__checkbox {
+      width: 24px;
+      height: 24px;
+      margin-right: 11px;
+    }
+    .agreement__checkbox-text {
+      max-width: 340px;
+    }
   }
 
   &__checkbox-field {
@@ -73,24 +84,6 @@
     margin: 16px 0 36px;
   }
 
-  &__checkbox-real { display: none; }
-  &__checkbox-real:checked + &__checkbox {
-    @extend %checkboxchecked;
-  }
-  &__checkbox {
-    @include checkbox(24px);
-    margin-right: 11px;
-  }
-
-  &__checkbox-text {
-    @extend %fonttextsmall;
-    max-width: 340px;
-    margin: 0;
-
-    & a {
-      color: $colorblue800;
-    }
-  }
 }
 
 @media screen and (max-width: 1140px) {
@@ -98,6 +91,9 @@
     &__background { 
       padding-left: 32px; 
       position: relative;
+    }
+    &__data {
+      padding-bottom: 32px;
     }
     &__image {
       position: absolute; 
@@ -127,10 +123,11 @@
 }
 @media screen and (max-width: $breakpointmobile) {
   .feedback {
+    margin-top: 40px;
     &__background {
       flex-direction: column;
       align-items: center;
-      padding: 0 12px 32px;
+      padding: 0 12px;
     }
     &__data {
       order: 1;
@@ -160,9 +157,6 @@
     }
     &__button {
       margin-top: 8px;
-    }
-    &__checkbox-field {
-      margin-bottom: 0;
     }
   }
 }
