@@ -18,9 +18,8 @@
   }
 
   &__title {
+    @extend %fonttitleh2;
     font-weight: 700;
-    font-size: 32px;
-    line-height: 40px;
     color: $colorgrey500;
     margin: 36px 0 0;
   }

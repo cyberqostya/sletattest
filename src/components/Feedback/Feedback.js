@@ -1,7 +1,14 @@
 import './Feedback.scss';
 import dog from '../../assets/images/dog.png';
+import { useState } from 'react';
 
 export default function Feedback() {
+  
+  const [input, setInput] = useState('+7');
+  function changeInput(e) {
+    setInput(e.target.value);
+  }
+
   return(
     <section className='feedback'>
       <div className='feedback__background'>
@@ -10,7 +17,7 @@ export default function Feedback() {
           <p className='feedback__subtitle'>Наши менеджеры с удовольствием погавкают с вами о всех ваших вопросах</p>
           <div className='feedback__input-field'>
             <p className='feedback__input-placeholder'>Ваш номер телефона</p>
-            <input type='tel' className='feedback__input-tel' value='+7' />
+            <input type='tel' className='feedback__input-tel' value={input} onChange={changeInput} maxLength='12' />
             <button className='feedback__button'>Перезвоните мне</button>
           </div>
           <label className='feedback__checkbox-field'>

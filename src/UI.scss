@@ -3,9 +3,12 @@ $colororange: #F6A81C;
 $coloryellow: #FFCA00;
 $colorgrey500: #313140;
 $colorgrey200: #a1a1a1;
+$colorgrey100: #e6e6e6;
 $colorblue800: #3D95FB;
 $colorblue500: #0078BE;
+$colorblue200: #D8EAFE;
 $colorwhite: #fff;
+$colorred: #FB4242;
 
 
 %fonttext {
@@ -22,6 +25,16 @@ $colorwhite: #fff;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+}
+%fonttitleh2 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+}
+%fonttitleh3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 
@@ -40,7 +53,7 @@ $colorwhite: #fff;
   }
 }
 %checkboxchecked {
-  background: center/65% url(./assets//images/checked.svg) no-repeat;
+  background: center/62% url(./assets//images/checked.svg) no-repeat;
   background-color: $colorblue800;
 }
 
